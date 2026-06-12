@@ -54,33 +54,30 @@ const plans = [
 
 const containerVariants = {
   hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.15 },
-  },
+  visible: { transition: { staggerChildren: 0.15 } },
 };
 
 export default function Pricing() {
   const [isAnnual, setIsAnnual] = useState(true);
 
   return (
-    <section id="pricing" className="py-20 sm:py-28 bg-gradient-to-b from-white to-primary-50/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="pricing" className="py-20 sm:py-28 relative">
+      <div className="absolute inset-0 bg-gradient-to-b from-dark via-dark-deep/30 to-dark pointer-events-none" />
+      <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-accent-500/5 rounded-full blur-3xl" />
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <span className="text-sm font-semibold uppercase tracking-widest text-primary-500">
-            Pricing
-          </span>
+          <span className="text-sm font-semibold uppercase tracking-widest text-primary-400">Pricing</span>
           <h2 className="section-heading mt-3 mb-4">
             Simple, Transparent{' '}
             <span className="gradient-text">Pricing</span>
           </h2>
-          <p className="section-subheading">
-            Choose the plan that fits your team. No hidden fees.
-          </p>
+          <p className="section-subheading">Choose the plan that fits your team. No hidden fees.</p>
         </motion.div>
 
         <motion.div
@@ -89,10 +86,10 @@ export default function Pricing() {
           viewport={{ once: true }}
           className="flex items-center justify-center gap-4 mb-12"
         >
-          <span className={`text-sm font-medium ${!isAnnual ? 'text-dark' : 'text-gray-400'}`}>Monthly</span>
+          <span className={`text-sm font-medium ${!isAnnual ? 'text-light' : 'text-muted'}`}>Monthly</span>
           <button
             onClick={() => setIsAnnual(!isAnnual)}
-            className={`relative w-14 h-7 rounded-full transition-colors duration-300 ${isAnnual ? 'bg-primary-500' : 'bg-gray-200'}`}
+            className={`relative w-14 h-7 rounded-full transition-colors duration-300 ${isAnnual ? 'bg-primary-500' : 'bg-surface-light'}`}
           >
             <motion.div
               animate={{ x: isAnnual ? 28 : 4 }}
@@ -100,8 +97,8 @@ export default function Pricing() {
               className="absolute top-1 w-5 h-5 bg-white rounded-full shadow-md"
             />
           </button>
-          <span className={`text-sm font-medium ${isAnnual ? 'text-dark' : 'text-gray-400'}`}>
-            Annual <span className="text-accent-500 text-xs">Save 20%</span>
+          <span className={`text-sm font-medium ${isAnnual ? 'text-light' : 'text-muted'}`}>
+            Annual <span className="text-accent-400 text-xs">Save 20%</span>
           </span>
         </motion.div>
 
@@ -122,10 +119,10 @@ export default function Pricing() {
                   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
                 }}
                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
-                className={`relative glass-card rounded-3xl p-8 flex flex-col ${
+                className={`relative glass-card rounded-3xl p-8 flex flex-col border ${
                   plan.popular
-                    ? 'border-primary-500 shadow-2xl shadow-primary-500/20 scale-105 lg:scale-110'
-                    : 'border-gray-100'
+                    ? 'border-primary-500/50 shadow-2xl shadow-primary-500/10 scale-105 lg:scale-110'
+                    : 'border-white/5 hover:border-white/10'
                 }`}
               >
                 {plan.popular && (
@@ -135,22 +132,22 @@ export default function Pricing() {
                 )}
 
                 <div className="mb-6">
-                  <h3 className="font-display text-2xl font-bold text-dark mb-2">{plan.name}</h3>
-                  <p className="text-gray-500 text-sm mb-4">{plan.description}</p>
+                  <h3 className="font-display text-2xl font-bold text-light mb-2">{plan.name}</h3>
+                  <p className="text-muted text-sm mb-4">{plan.description}</p>
                   <div className="flex items-baseline gap-1">
-                    <span className="font-display text-4xl font-extrabold text-dark">${price}</span>
-                    <span className="text-gray-400 text-sm">/month</span>
+                    <span className="font-display text-4xl font-extrabold text-light">${price}</span>
+                    <span className="text-muted text-sm">/month</span>
                   </div>
                   {isAnnual && (
-                    <p className="text-xs text-gray-400 mt-1">Billed annually (${price * 12}/yr)</p>
+                    <p className="text-xs text-muted mt-1">Billed annually (${price * 12}/yr)</p>
                   )}
                 </div>
 
                 <ul className="space-y-3.5 mb-8 flex-1">
                   {plan.features.map((feature) => (
                     <li key={feature} className="flex items-center gap-3">
-                      <HiCheck className="text-accent-500 flex-shrink-0 text-lg" />
-                      <span className="text-sm text-gray-600">{feature}</span>
+                      <HiCheck className="text-accent-400 flex-shrink-0 text-lg" />
+                      <span className="text-sm text-muted">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -160,7 +157,7 @@ export default function Pricing() {
                   className={`inline-flex items-center justify-center gap-2 w-full py-3.5 rounded-2xl font-semibold text-base transition-all duration-300 ${
                     plan.popular
                       ? 'bg-primary-500 text-white hover:bg-primary-600 hover:shadow-xl hover:shadow-primary-500/25'
-                      : 'bg-gray-100 text-dark hover:bg-gray-200 hover:shadow-lg'
+                      : 'bg-surface-light/50 text-light hover:bg-surface-light border border-white/5 hover:border-white/10'
                   }`}
                 >
                   Get Started
