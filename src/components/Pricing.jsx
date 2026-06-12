@@ -1,0 +1,176 @@
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import { HiCheck, HiArrowRight } from 'react-icons/hi2';
+
+const plans = [
+  {
+    name: 'Starter',
+    price: 29,
+    description: 'Perfect for small teams getting started.',
+    popular: false,
+    features: [
+      'Up to 50 employees',
+      'GPS attendance tracking',
+      'Basic reporting',
+      'Email support',
+      'Mobile app access',
+      'Leave management',
+    ],
+  },
+  {
+    name: 'Professional',
+    price: 79,
+    description: 'Best for growing companies.',
+    popular: true,
+    features: [
+      'Up to 500 employees',
+      'Face recognition',
+      'Advanced analytics',
+      'Priority support',
+      'Payroll integration',
+      'Custom reports',
+      'API access',
+      'Team management',
+    ],
+  },
+  {
+    name: 'Enterprise',
+    price: 199,
+    description: 'For large organizations with custom needs.',
+    popular: false,
+    features: [
+      'Unlimited employees',
+      'All Pro features',
+      'Dedicated account manager',
+      'Custom integrations',
+      'SLA guarantee',
+      '24/7 phone support',
+      'On-premise option',
+      'Advanced security',
+      'Custom branding',
+    ],
+  },
+];
+
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.15 },
+  },
+};
+
+export default function Pricing() {
+  const [isAnnual, setIsAnnual] = useState(true);
+
+  return (
+    <section id="pricing" className="py-20 sm:py-28 bg-gradient-to-b from-white to-primary-50/30">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
+          <span className="text-sm font-semibold uppercase tracking-widest text-primary-500">
+            Pricing
+          </span>
+          <h2 className="section-heading mt-3 mb-4">
+            Simple, Transparent{' '}
+            <span className="gradient-text">Pricing</span>
+          </h2>
+          <p className="section-subheading">
+            Choose the plan that fits your team. No hidden fees.
+          </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex items-center justify-center gap-4 mb-12"
+        >
+          <span className={`text-sm font-medium ${!isAnnual ? 'text-dark' : 'text-gray-400'}`}>Monthly</span>
+          <button
+            onClick={() => setIsAnnual(!isAnnual)}
+            className={`relative w-14 h-7 rounded-full transition-colors duration-300 ${isAnnual ? 'bg-primary-500' : 'bg-gray-200'}`}
+          >
+            <motion.div
+              animate={{ x: isAnnual ? 28 : 4 }}
+              transition={{ type: 'spring', stiffness: 500, damping: 30 }}
+              className="absolute top-1 w-5 h-5 bg-white rounded-full shadow-md"
+            />
+          </button>
+          <span className={`text-sm font-medium ${isAnnual ? 'text-dark' : 'text-gray-400'}`}>
+            Annual <span className="text-accent-500 text-xs">Save 20%</span>
+          </span>
+        </motion.div>
+
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-50px' }}
+          className="grid lg:grid-cols-3 gap-8 lg:gap-6"
+        >
+          {plans.map((plan) => {
+            const price = isAnnual ? Math.round(plan.price * 0.8) : plan.price;
+            return (
+              <motion.div
+                key={plan.name}
+                variants={{
+                  hidden: { opacity: 0, y: 40 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+                }}
+                whileHover={{ y: -8, transition: { duration: 0.3 } }}
+                className={`relative glass-card rounded-3xl p-8 flex flex-col ${
+                  plan.popular
+                    ? 'border-primary-500 shadow-2xl shadow-primary-500/20 scale-105 lg:scale-110'
+                    : 'border-gray-100'
+                }`}
+              >
+                {plan.popular && (
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary-500 to-accent-500 text-white text-sm font-semibold px-6 py-1.5 rounded-full shadow-lg">
+                    Most Popular
+                  </div>
+                )}
+
+                <div className="mb-6">
+                  <h3 className="font-display text-2xl font-bold text-dark mb-2">{plan.name}</h3>
+                  <p className="text-gray-500 text-sm mb-4">{plan.description}</p>
+                  <div className="flex items-baseline gap-1">
+                    <span className="font-display text-4xl font-extrabold text-dark">${price}</span>
+                    <span className="text-gray-400 text-sm">/month</span>
+                  </div>
+                  {isAnnual && (
+                    <p className="text-xs text-gray-400 mt-1">Billed annually (${price * 12}/yr)</p>
+                  )}
+                </div>
+
+                <ul className="space-y-3.5 mb-8 flex-1">
+                  {plan.features.map((feature) => (
+                    <li key={feature} className="flex items-center gap-3">
+                      <HiCheck className="text-accent-500 flex-shrink-0 text-lg" />
+                      <span className="text-sm text-gray-600">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <a
+                  href="#cta"
+                  className={`inline-flex items-center justify-center gap-2 w-full py-3.5 rounded-2xl font-semibold text-base transition-all duration-300 ${
+                    plan.popular
+                      ? 'bg-primary-500 text-white hover:bg-primary-600 hover:shadow-xl hover:shadow-primary-500/25'
+                      : 'bg-gray-100 text-dark hover:bg-gray-200 hover:shadow-lg'
+                  }`}
+                >
+                  Get Started
+                  <HiArrowRight />
+                </a>
+              </motion.div>
+            );
+          })}
+        </motion.div>
+      </div>
+    </section>
+  );
+}
