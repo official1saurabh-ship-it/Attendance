@@ -6,6 +6,7 @@ import {
   HiPlay,
   HiQuestionMarkCircle,
   HiEnvelope,
+  HiChatBubbleLeftEllipsis,
   HiArrowRight,
 } from 'react-icons/hi2';
 
@@ -23,7 +24,7 @@ const helpCategories = [
   { icon: HiBookOpen, title: 'Guides & Tutorials', description: 'Step-by-step guides to help you get started.', articles: '24 articles', gradient: 'from-primary-500 to-blue-600' },
   { icon: HiPlay, title: 'Video Tutorials', description: 'Watch our library of how-to videos with walkthroughs.', articles: '18 videos', gradient: 'from-accent-500 to-teal-600' },
   { icon: HiQuestionMarkCircle, title: 'FAQ', description: 'Answers to the most common questions from users.', articles: '35 articles', gradient: 'from-violet-500 to-purple-600' },
-  { icon: HiChatBubbleLeftRight, title: 'Community Forum', description: 'Connect and get help from other AttendPro users.', articles: 'Join the conversation', gradient: 'from-orange-500 to-red-600' },
+  { icon: HiChatBubbleLeftEllipsis, title: 'Community Forum', description: 'Connect and get help from other AttendPro users.', articles: 'Join the conversation', gradient: 'from-orange-500 to-red-600' },
   { icon: HiEnvelope, title: 'Email Support', description: 'Reach our support team directly via email.', articles: 'Response in 2-4 hours', gradient: 'from-pink-500 to-rose-600' },
   { icon: HiMagnifyingGlass, title: 'Search Docs', description: 'Search our entire knowledge base for answers.', articles: 'Find answers fast', gradient: 'from-cyan-500 to-blue-600' },
 ];
