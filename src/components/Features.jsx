@@ -12,7 +12,7 @@ const features = [
   {
     icon: HiMapPin,
     title: 'GPS Attendance',
-    description: 'Track employee attendance with real-time GPS verification. Ensure accurate location-based check-ins with geo-fencing.',
+    description: 'Employees check in with real-time GPS location. Set geofenced zones so attendance is only valid from the right place.',
     gradient: 'from-primary-500 to-blue-600',
     border: 'hover:border-primary-500/30',
     glow: 'shadow-primary-500/10',
@@ -20,7 +20,7 @@ const features = [
   {
     icon: HiCamera,
     title: 'Face Recognition',
-    description: 'AI-powered facial recognition for secure and contactless attendance marking with 99.5% accuracy in any lighting.',
+    description: 'AI-driven facial recognition for fast, contactless check-ins. 99.5% accurate in any lighting — stops buddy punching for good.',
     gradient: 'from-accent-500 to-teal-600',
     border: 'hover:border-accent-500/30',
     glow: 'shadow-accent-500/10',
@@ -28,7 +28,7 @@ const features = [
   {
     icon: HiCalendarDays,
     title: 'Leave Management',
-    description: 'Streamlined leave requests with automated approvals, balance tracking, and team calendar visibility.',
+    description: 'Employees request leave in seconds. Automated approvals, balance tracking, and a shared calendar keep everyone on the same page.',
     gradient: 'from-violet-500 to-purple-600',
     border: 'hover:border-violet-500/30',
     glow: 'shadow-violet-500/10',
@@ -36,7 +36,7 @@ const features = [
   {
     icon: HiCurrencyDollar,
     title: 'Payroll Integration',
-    description: 'Seamless payroll sync with automatic calculations based on attendance, overtime, and leave data.',
+    description: 'Say goodbye to manual payroll prep. Attendance, overtime, and leave data flow directly into your payroll system — error-free.',
     gradient: 'from-orange-500 to-red-600',
     border: 'hover:border-orange-500/30',
     glow: 'shadow-orange-500/10',
@@ -44,7 +44,7 @@ const features = [
   {
     icon: HiChartBar,
     title: 'Real-Time Reports',
-    description: 'Dynamic dashboards with real-time analytics, custom reports, and actionable workforce insights.',
+    description: 'Live dashboards and custom reports give you instant visibility into attendance trends, team performance, and workforce costs.',
     gradient: 'from-cyan-500 to-blue-600',
     border: 'hover:border-cyan-500/30',
     glow: 'shadow-cyan-500/10',
@@ -52,7 +52,7 @@ const features = [
   {
     icon: HiDevicePhoneMobile,
     title: 'Mobile Attendance',
-    description: 'Full-featured mobile app for attendance on the go. Works offline with automatic sync when connected.',
+    description: 'Check in from anywhere with our mobile app. Works offline too — data syncs automatically once you are back online.',
     gradient: 'from-pink-500 to-rose-600',
     border: 'hover:border-pink-500/30',
     glow: 'shadow-pink-500/10',
@@ -71,7 +71,7 @@ const cardVariants = {
 
 export default function Features() {
   return (
-    <section id="features" className="py-20 sm:py-28 relative">
+    <section id="features" className="py-14 sm:py-20 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-dark via-dark-deep/50 to-dark pointer-events-none" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-500/3 rounded-full blur-3xl" />
 
@@ -88,7 +88,7 @@ export default function Features() {
             <span className="gradient-text">Attendance</span>
           </h2>
           <p className="section-subheading">
-            Powerful tools to manage attendance, streamline workflows, and boost productivity across your organization.
+            Powerful tools that make attendance tracking, leave management, and payroll a breeze.
           </p>
         </motion.div>
 

@@ -3,18 +3,18 @@ import { HiArrowRight } from 'react-icons/hi2';
 import PageLayout from './PageLayout';
 
 const posts = [
-  { title: 'How AI is Transforming Attendance Management in 2026', category: 'Technology', date: 'Jun 5, 2026', readTime: '5 min read', excerpt: 'Discover how artificial intelligence is revolutionizing the way companies track and manage employee attendance.' },
-  { title: '10 Ways to Reduce Payroll Errors with Automated Attendance', category: 'Best Practices', date: 'May 22, 2026', readTime: '7 min read', excerpt: 'Manual attendance tracking leads to costly payroll errors. Learn how automation can save your team time and money.' },
-  { title: 'The Future of Hybrid Work: Attendance Solutions for Remote Teams', category: 'Workplace', date: 'May 8, 2026', readTime: '6 min read', excerpt: 'As hybrid work becomes the norm, companies need flexible attendance solutions that work for everyone.' },
-  { title: 'Face Recognition vs. Traditional Check-In: A Comparison', category: 'Technology', date: 'Apr 20, 2026', readTime: '4 min read', excerpt: 'We compare the accuracy, security, and convenience of face recognition against traditional attendance methods.' },
-  { title: 'Getting Started with AttendPro: A Step-by-Step Guide', category: 'Tutorial', date: 'Apr 10, 2026', readTime: '8 min read', excerpt: 'New to AttendPro? Follow our comprehensive guide to set up your attendance management system in minutes.' },
+  { title: 'How AI is Changing Attendance Management in 2026', category: 'Technology', date: 'Jun 5, 2026', readTime: '5 min read', excerpt: 'Artificial intelligence is reshaping how companies track and manage attendance. Here is what you need to know.' },
+  { title: '10 Ways to Reduce Payroll Errors with Automated Attendance', category: 'Best Practices', date: 'May 22, 2026', readTime: '7 min read', excerpt: 'Manual attendance tracking leads to costly payroll mistakes. Learn how automation can save your team time and money.' },
+  { title: 'Hybrid Work Attendance Solutions for Remote Teams', category: 'Workplace', date: 'May 8, 2026', readTime: '6 min read', excerpt: 'As hybrid work becomes the norm, companies need attendance systems that work for everyone — in-office and remote.' },
+  { title: 'Face Recognition vs. Traditional Check-In: Which Is Better?', category: 'Technology', date: 'Apr 20, 2026', readTime: '4 min read', excerpt: 'We compare accuracy, security, and convenience of face recognition against traditional attendance methods.' },
+  { title: 'Getting Started with AttendanceMitra: A Step-by-Step Guide', category: 'Tutorial', date: 'Apr 10, 2026', readTime: '8 min read', excerpt: 'New to AttendanceMitra? Follow our guide to set up your attendance system and get your team on board in minutes.' },
 ];
 
 export default function Blog() {
   return (
     <PageLayout
       title="Blog"
-      description="Insights, tips, and news about attendance management and the future of work."
+      description="Insights, tips, and updates about attendance management and the future of work."
     >
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {posts.map((post, i) => (

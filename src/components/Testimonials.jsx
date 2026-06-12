@@ -9,7 +9,7 @@ const testimonials = [
     company: 'TechFlow Inc.',
     initials: 'SM',
     rating: 5,
-    text: 'AttendPro has completely transformed how we manage attendance. The face recognition feature alone saved us countless hours. Our payroll accuracy improved by 98%.',
+    text: 'AttendanceMitra transformed how we manage attendance. The face recognition feature alone saved us hours every week. Payroll errors are a thing of the past.',
     gradient: 'from-primary-500 to-blue-600',
   },
   {
@@ -18,7 +18,7 @@ const testimonials = [
     company: 'NovaCore Solutions',
     initials: 'JR',
     rating: 5,
-    text: 'The GPS attendance tracking is a game-changer for our field teams. We know exactly who is where, and the real-time reporting gives us complete visibility.',
+    text: 'GPS attendance tracking is a game-changer for our field teams. We always know who is where, and the real-time reports give us complete visibility.',
     gradient: 'from-accent-500 to-teal-600',
   },
   {
@@ -27,7 +27,7 @@ const testimonials = [
     company: 'ApexDigital',
     initials: 'EC',
     rating: 5,
-    text: 'Implementation was incredibly smooth. The team at AttendPro held our hand through the entire process. Our employees love the mobile app.',
+    text: 'Setup was incredibly smooth. The AttendanceMitra team guided us through every step. Our employees love the mobile app and we love the admin dashboard.',
     gradient: 'from-violet-500 to-purple-600',
   },
   {
@@ -36,7 +36,7 @@ const testimonials = [
     company: 'CloudPeak Systems',
     initials: 'MT',
     rating: 4,
-    text: 'The API integration with our existing payroll system was seamless. The analytics dashboard gives us insights we never had before. Highly recommended.',
+    text: 'Integrating with our existing payroll was seamless. The analytics dashboard gives us insights we never had before. Highly recommended for any growing team.',
     gradient: 'from-orange-500 to-red-600',
   },
 ];
@@ -55,7 +55,7 @@ export default function Testimonials() {
   const prev = () => { setDirection(-1); setCurrent((prev) => (prev - 1 + testimonials.length) % testimonials.length); };
 
   return (
-    <section id="testimonials" className="py-20 sm:py-28 relative overflow-hidden">
+    <section id="testimonials" className="py-14 sm:py-20 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-dark-deep/30 via-dark to-dark-deep/30 pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -70,7 +70,7 @@ export default function Testimonials() {
             Loved by{' '}
             <span className="gradient-text">Teams Worldwide</span>
           </h2>
-          <p className="section-subheading">See what our customers say about their experience.</p>
+          <p className="section-subheading">See why teams around the world love AttendanceMitra.</p>
         </motion.div>
 
         <div className="relative max-w-3xl mx-auto">

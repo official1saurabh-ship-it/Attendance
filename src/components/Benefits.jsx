@@ -2,16 +2,16 @@ import { motion } from 'framer-motion';
 import { HiCheckCircle } from 'react-icons/hi2';
 
 const benefits = [
-  { title: 'Reduce Manual Work', description: 'Automate attendance tracking and eliminate paperwork, saving HR teams 15+ hours per week.' },
-  { title: 'Increase Accuracy', description: 'AI-powered verification reduces errors and prevents buddy punching with face recognition technology.' },
-  { title: 'Save Time & Resources', description: 'Streamlined processes mean HR teams spend 70% less time on attendance management tasks.' },
-  { title: 'Better Workforce Management', description: 'Real-time insights into attendance patterns help optimize workforce planning and scheduling.' },
-  { title: 'Faster Payroll Processing', description: 'Auto-sync attendance data with payroll systems for error-free, same-day processing every cycle.' },
+  { title: 'Cut the Paperwork', description: 'Automate attendance tracking and eliminate spreadsheets. Save your HR team 15+ hours every single week.' },
+  { title: 'Nail the Accuracy', description: 'AI-powered face recognition stops buddy punching and manual errors. Get 99.5% accuracy on every check-in.' },
+  { title: 'Save Time & Money', description: 'HR teams spend 70% less time on attendance tasks. Payroll errors drop to near zero with automated syncing.' },
+  { title: 'See the Big Picture', description: 'Real-time attendance dashboards help you spot trends, manage shifts, and plan your workforce with confidence.' },
+  { title: 'Payroll in One Click', description: 'Attendance data flows directly into your payroll system. No double entry, no mistakes, same-day processing.' },
 ];
 
 export default function Benefits() {
   return (
-    <section className="py-20 sm:py-28 relative">
+    <section className="py-14 sm:py-20 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-dark via-dark-deep/40 to-dark pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -25,10 +25,10 @@ export default function Benefits() {
             <span className="text-sm font-semibold uppercase tracking-widest text-primary-400">Benefits</span>
             <h2 className="section-heading mt-3 mb-6">
               Why Teams Choose{' '}
-              <span className="gradient-text">AttendPro</span>
+              <span className="gradient-text">AttendanceMitra</span>
             </h2>
             <p className="text-muted leading-relaxed mb-8 text-lg">
-              Join thousands of companies that have transformed their attendance management with our platform.
+              Thousands of companies have transformed the way they manage attendance. Here is why they chose us.
             </p>
 
             <div className="space-y-5">

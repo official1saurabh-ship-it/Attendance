@@ -42,7 +42,6 @@ const solutionLinks = [
 
 const companyLinks = [
   { label: 'About Us', to: '/about' },
-  { label: 'Careers', to: '/careers' },
   { label: 'Blog', to: '/blog' },
   { label: 'Contact', to: '/contact' },
   { label: 'Partners', to: '/contact' },
@@ -50,7 +49,7 @@ const companyLinks = [
 
 const supportLinks = [
   { label: 'Help Center', to: '/help' },
-  { label: 'FAQs', to: '/help' },
+  { label: 'FAQs', to: '/#faq' },
   { label: 'Documentation', to: '/docs' },
 
   { label: 'System Status', to: '/status' },
@@ -132,12 +131,13 @@ export default function Footer() {
                   </svg>
                 </div>
                 <span className="font-display text-xl font-bold text-light">
-                  Attend<span className="text-primary-400">Pro</span>
+                  Attendance<span className="text-primary-400">Mitra</span>
                 </span>
               </Link>
               <p className="text-sm text-muted leading-relaxed mb-6 max-w-xs">
-                Smart attendance and workforce management software designed for modern businesses. Track attendance, manage shifts, automate payroll, and boost productivity.
+                Smart attendance and workforce management software for modern businesses. Track attendance, manage shifts, automate payroll, and boost productivity — all in one place.
               </p>
+              {/* Social links commented out
               <div className="flex gap-2.5">
                 {socialLinks.map((social) => (
                   <a
@@ -150,6 +150,7 @@ export default function Footer() {
                   </a>
                 ))}
               </div>
+              */}
             </motion.div>
 
             <FooterColumn title="Solutions" links={solutionLinks} />
@@ -177,12 +178,17 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <span className="flex items-center gap-3 text-sm text-muted">
-                    <span className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center text-muted">
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=3rd+Floor,+Office+No-624/20A,+Kotwali+Rd,+Matiyaari,+Chinhat,+Lucknow,+Uttar+Pradesh-226028"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-start gap-3 text-sm text-muted hover:text-light transition-colors duration-300 group"
+                  >
+                    <span className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center text-muted group-hover:bg-primary-500/20 group-hover:text-primary-400 transition-all flex-shrink-0">
                       <HiMapPin className="text-sm" />
                     </span>
-                    Lucknow, India
-                  </span>
+                    <span className="break-words">3rd Floor, Office No-624/20A, Kotwali Rd, Matiyaari, Chinhat, Lucknow, Uttar Pradesh-226028</span>
+                  </a>
                 </li>
                 <li className="pt-1">
                   <span className="flex items-start gap-3 text-sm text-muted">
@@ -204,7 +210,7 @@ export default function Footer() {
         <motion.section variants={itemVariants} className="border-t border-white/5">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 sm:py-6">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-              <p className="text-xs sm:text-sm text-muted/60">&copy; {new Date().getFullYear()} AttendPro. All rights reserved.</p>
+              <p className="text-xs sm:text-sm text-muted/60">&copy; {new Date().getFullYear()} AttendanceMitra. All rights reserved.</p>
               <div className="flex items-center gap-0">
                 {legalLinks.map((link, i) => (
                   <span key={link.label} className="flex items-center">

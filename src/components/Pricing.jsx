@@ -5,8 +5,8 @@ import { HiCheck, HiArrowRight } from 'react-icons/hi2';
 const plans = [
   {
     name: 'Starter',
-    price: 29,
-    description: 'Perfect for small teams getting started.',
+    price: 999,
+    description: 'Everything a small team needs to get started.',
     popular: false,
     features: [
       'Up to 50 employees',
@@ -19,8 +19,8 @@ const plans = [
   },
   {
     name: 'Professional',
-    price: 79,
-    description: 'Best for growing companies.',
+    price: 2499,
+    description: 'Built for growing companies that need more power.',
     popular: true,
     features: [
       'Up to 500 employees',
@@ -35,8 +35,8 @@ const plans = [
   },
   {
     name: 'Enterprise',
-    price: 199,
-    description: 'For large organizations with custom needs.',
+    price: 4999,
+    description: 'For large organizations with custom requirements.',
     popular: false,
     features: [
       'Unlimited employees',
@@ -61,7 +61,7 @@ export default function Pricing() {
   const [isAnnual, setIsAnnual] = useState(true);
 
   return (
-    <section id="pricing" className="py-20 sm:py-28 relative">
+    <section id="pricing" className="py-14 sm:py-20 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-dark via-dark-deep/30 to-dark pointer-events-none" />
       <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-accent-500/5 rounded-full blur-3xl" />
 
@@ -77,7 +77,7 @@ export default function Pricing() {
             Simple, Transparent{' '}
             <span className="gradient-text">Pricing</span>
           </h2>
-          <p className="section-subheading">Choose the plan that fits your team. No hidden fees.</p>
+          <p className="section-subheading">Choose the plan that fits your team. No hidden fees, no surprises.</p>
         </motion.div>
 
         <motion.div
@@ -135,11 +135,11 @@ export default function Pricing() {
                   <h3 className="font-display text-2xl font-bold text-light mb-2">{plan.name}</h3>
                   <p className="text-muted text-sm mb-4">{plan.description}</p>
                   <div className="flex items-baseline gap-1">
-                    <span className="font-display text-4xl font-extrabold text-light">${price}</span>
+                    <span className="font-display text-4xl font-extrabold text-light">₹{price.toLocaleString('en-IN')}</span>
                     <span className="text-muted text-sm">/month</span>
                   </div>
                   {isAnnual && (
-                    <p className="text-xs text-muted mt-1">Billed annually (${price * 12}/yr)</p>
+                    <p className="text-xs text-muted mt-1">Billed annually (₹{(price * 12).toLocaleString('en-IN')}/yr)</p>
                   )}
                 </div>
 
@@ -153,7 +153,8 @@ export default function Pricing() {
                 </ul>
 
                 <a
-                  href="#cta"
+                  href="https://att.biosoftech.in/"
+                  target="_blank" rel="noopener noreferrer"
                   className={`inline-flex items-center justify-center gap-2 w-full py-3.5 rounded-2xl font-semibold text-base transition-all duration-300 ${
                     plan.popular
                       ? 'bg-primary-500 text-white hover:bg-primary-600 hover:shadow-xl hover:shadow-primary-500/25'

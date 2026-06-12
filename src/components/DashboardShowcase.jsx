@@ -46,7 +46,7 @@ const panels = [
 
 export default function DashboardShowcase() {
   return (
-    <section className="py-20 sm:py-28 relative">
+    <section className="py-14 sm:py-20 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-dark-deep/30 via-dark to-dark pointer-events-none" />
       <div className="absolute bottom-0 left-1/3 w-[600px] h-[600px] bg-primary-500/5 rounded-full blur-3xl" />
 
@@ -62,7 +62,7 @@ export default function DashboardShowcase() {
             Powerful{' '}
             <span className="gradient-text">Dashboard</span> at Your Fingertips
           </h2>
-          <p className="section-subheading">Everything you need to manage attendance in one beautiful interface.</p>
+          <p className="section-subheading">Everything you need to manage attendance, leaves, and payroll in one beautiful interface.</p>
         </motion.div>
 
         <motion.div
@@ -79,7 +79,7 @@ export default function DashboardShowcase() {
                 <div className="w-3 h-3 rounded-full bg-accent-500/80" />
               </div>
               <div className="flex-1 h-8 bg-surface-light/30 rounded-xl flex items-center px-4">
-                <span className="text-sm text-muted">dashboard.attendpro.com</span>
+                <span className="text-sm text-muted">dashboard.AttendanceMitra.com</span>
               </div>
             </div>
 

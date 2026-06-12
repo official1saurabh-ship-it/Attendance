@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import { HiMenu, HiX } from 'react-icons/hi';
+import { HiBars3 as HiMenu, HiXMark as HiX } from 'react-icons/hi2';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const navLinks = [
   { label: 'Features', href: '/#features' },
@@ -11,8 +11,8 @@ const navLinks = [
 ];
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
   const isHome = location.pathname === '/';
 
@@ -23,7 +23,6 @@ export default function Navbar() {
   }, []);
 
   const handleClick = (href) => {
-    setIsOpen(false);
     if (isHome && href.startsWith('/#')) {
       const id = href.replace('/#', '#');
       const el = document.querySelector(id);
@@ -32,14 +31,11 @@ export default function Navbar() {
   };
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-500 ${
         scrolled
           ? 'bg-dark/80 backdrop-blur-2xl shadow-lg shadow-black/20 border-b border-white/5'
-          : 'bg-transparent'
+          : 'bg-dark/60 lg:bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -51,7 +47,7 @@ export default function Navbar() {
               </svg>
             </div>
             <span className="font-display text-xl font-bold text-light">
-              Attend<span className="text-primary-400">Pro</span>
+              Attendance<span className="text-primary-400">Mitra</span>
             </span>
           </Link>
 
@@ -78,7 +74,8 @@ export default function Navbar() {
 
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 rounded-xl hover:bg-white/5 transition-colors duration-200 text-light"
+            className="lg:hidden p-2.5 rounded-xl bg-white/10 hover:bg-white/20 transition-colors duration-200 text-light border border-white/10"
+            aria-label="Toggle menu"
           >
             {isOpen ? <HiX size={24} /> : <HiMenu size={24} />}
           </button>
@@ -91,16 +88,16 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="lg:hidden bg-dark/95 backdrop-blur-2xl border-t border-white/5 overflow-hidden"
+            transition={{ duration: 0.25 }}
+            className="lg:hidden bg-dark/95 backdrop-blur-xl border-t border-white/5 overflow-hidden"
           >
-            <div className="px-4 py-6 space-y-4">
+            <div className="px-4 py-6 space-y-3">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={isHome ? link.href.replace('/#', '#') : link.href}
                   onClick={() => handleClick(link.href)}
-                  className="block text-muted hover:text-light font-medium py-2 transition-colors duration-200 text-sm"
+                  className="block px-4 py-3 rounded-xl text-muted hover:text-light hover:bg-white/5 font-medium transition-all duration-200 text-sm"
                 >
                   {link.label}
                 </a>
@@ -108,14 +105,14 @@ export default function Navbar() {
               <Link
                 to="/#cta"
                 onClick={() => { setIsOpen(false); handleClick('/#cta'); }}
-                className="block text-center bg-primary-500 text-white px-6 py-3 rounded-xl font-semibold text-sm hover:bg-primary-600 transition-colors duration-200"
+                className="block text-center bg-gradient-to-r from-primary-500 to-blue-600 text-white px-6 py-3 rounded-xl font-semibold text-sm hover:shadow-lg hover:shadow-primary-500/25 transition-all duration-200"
               >
-                Get Started
+                Get Started Free
               </Link>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.nav>
+    </nav>
   );
 }

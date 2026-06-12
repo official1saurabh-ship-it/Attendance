@@ -12,15 +12,15 @@ const companies = [
 ];
 
 const metrics = [
-  { value: '500+', label: 'Companies', desc: 'Trust AttendPro globally' },
-  { value: '50K+', label: 'Employees Managed', desc: 'Across all industries' },
+  { value: '10+', label: 'Trusted Companies', desc: 'Rely on AttendanceMitra daily' },
+  { value: '20+', label: 'Employees Managed', desc: 'Across industries worldwide' },
   { value: '99.9%', label: 'System Uptime', desc: 'Enterprise-grade reliability' },
-  { value: '80%', label: 'Payroll Time Saved', desc: 'Average HR efficiency gain' },
+  { value: '70%', label: 'Faster Payroll', desc: 'Average time saved per cycle' },
 ];
 
 export default function TrustBar() {
   return (
-    <section className="py-16 sm:py-20 border-y border-white/5 bg-dark-deep/50">
+    <section className="py-12 sm:py-16 border-y border-white/5 bg-dark-deep/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.p
           initial={{ opacity: 0, y: 10 }}

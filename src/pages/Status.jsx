@@ -49,7 +49,7 @@ export default function Status() {
               System <span className="gradient-text">Status</span>
             </h1>
             <p className="text-lg text-muted max-w-xl mx-auto">
-              Current operational status of all AttendPro services.
+              Current operational status of all AttendanceMitra services.
             </p>
           </motion.div>
         </div>

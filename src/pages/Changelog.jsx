@@ -13,7 +13,7 @@ export default function Changelog() {
   return (
     <PageLayout
       title="Changelog"
-      description="Stay up to date with the latest features and improvements."
+      description="Stay up to date with the latest features, improvements, and fixes."
     >
       <div className="space-y-6">
         {releases.map((release, i) => (

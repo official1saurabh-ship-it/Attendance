@@ -14,7 +14,6 @@ import FAQ from './components/FAQ';
 import FinalCTA from './components/FinalCTA';
 import About from './pages/About';
 import Blog from './pages/Blog';
-import Careers from './pages/Careers';
 import Contact from './pages/Contact';
 import Integrations from './pages/Integrations';
 import Changelog from './pages/Changelog';
@@ -63,7 +62,6 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/blog" element={<Blog />} />
-          <Route path="/careers" element={<Careers />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/integrations" element={<Integrations />} />
           <Route path="/changelog" element={<Changelog />} />

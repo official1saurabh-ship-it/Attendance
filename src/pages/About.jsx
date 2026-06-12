@@ -5,11 +5,7 @@ import {
   HiShieldCheck,
   HiHeart,
   HiChartBar,
-  HiUserGroup,
-  HiGlobeAlt,
-  HiSparkles,
   HiArrowRight,
-  HiStar,
 } from 'react-icons/hi2';
 
 const stagger = {
@@ -22,35 +18,19 @@ const fadeUp = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
 };
 
-const stats = [
-  { value: '2020', suffix: '', label: 'Founded', icon: HiSparkles },
-  { value: '500', suffix: '+', label: 'Companies', icon: HiGlobeAlt },
-  { value: '50', suffix: '+', label: 'Team Members', icon: HiUserGroup },
-  { value: '4.9', suffix: '\u2605', label: 'Customer Rating', icon: HiStar },
-];
-
 const storyMilestones = [
-  { year: '2020', title: 'The Beginning', description: 'AttendPro was founded with a simple vision: eliminate attendance headaches for every organization.' },
-  { year: '2021', title: 'First 100 Customers', description: 'Reached our first 100 customers and launched GPS attendance tracking feature.' },
-  { year: '2023', title: 'AI-Powered Platform', description: 'Introduced face recognition and AI-driven analytics, processing 500K+ records monthly.' },
+  { year: '2020', title: 'The Beginning', description: 'AttendanceMitra was born from a simple idea: make attendance management effortless for every organization.' },
+  { year: '2021', title: 'First 100 Customers', description: 'Hit our first 100 customers and launched GPS-based attendance tracking.' },
+  { year: '2023', title: 'AI-Powered Platform', description: 'Introduced face recognition and AI analytics, processing over 500K records monthly.' },
   { year: '2025', title: 'Enterprise Scale', description: 'Crossed 500 customers, launched payroll integrations, and achieved SOC 2 compliance.' },
-  { year: '2026', title: 'Global Expansion', description: 'Expanded to 15+ countries, 1M+ monthly attendance records, and 50+ team members.' },
+  { year: '2026', title: 'Global Expansion', description: 'Expanded to 15+ countries, 1M+ monthly attendance records, and a team of 50+.' },
 ];
 
 const values = [
-  { icon: HiLightBulb, title: 'Innovation', description: 'We continuously push boundaries to deliver cutting-edge attendance solutions powered by AI and machine learning.', gradient: 'from-primary-500 to-primary-700' },
-  { icon: HiShieldCheck, title: 'Reliability', description: 'Our platform maintains 99.9% uptime, ensuring your attendance data is always available when you need it.', gradient: 'from-accent-500 to-emerald-600' },
-  { icon: HiHeart, title: 'Customer Success', description: 'Your success is our success. We provide dedicated support to help you get the most out of AttendPro.', gradient: 'from-rose-500 to-pink-600' },
-  { icon: HiChartBar, title: 'Data-Driven', description: 'Every decision we make is guided by data, ensuring we build features that truly matter to our users.', gradient: 'from-violet-500 to-purple-600' },
-];
-
-const team = [
-  { name: 'Akash Verma', role: 'Founder & CEO', initials: 'AV', gradient: 'from-primary-500 to-primary-700' },
-  { name: 'Priya Sharma', role: 'CTO', initials: 'PS', gradient: 'from-accent-500 to-emerald-600' },
-  { name: 'Rohit Singh', role: 'Head of Design', initials: 'RS', gradient: 'from-violet-500 to-purple-600' },
-  { name: 'Neha Gupta', role: 'VP of Engineering', initials: 'NG', gradient: 'from-orange-500 to-red-600' },
-  { name: 'Vikram Patel', role: 'Head of Sales', initials: 'VP', gradient: 'from-primary-400 to-primary-600' },
-  { name: 'Sana Khan', role: 'Customer Success Lead', initials: 'SK', gradient: 'from-pink-500 to-rose-600' },
+  { icon: HiLightBulb, title: 'Innovation', description: 'We push boundaries to deliver AI-powered attendance solutions that make work easier for everyone.', gradient: 'from-primary-500 to-primary-700' },
+  { icon: HiShieldCheck, title: 'Reliability', description: '99.9% uptime ensures your attendance data is always available when and where you need it.', gradient: 'from-accent-500 to-emerald-600' },
+  { icon: HiHeart, title: 'Customer Success', description: 'Your success drives us. We provide hands-on support to help you get the most from AttendanceMitra.', gradient: 'from-rose-500 to-pink-600' },
+  { icon: HiChartBar, title: 'Data-Driven', description: 'Every feature we build is guided by real data, so we solve problems that actually matter to our users.', gradient: 'from-violet-500 to-purple-600' },
 ];
 
 export default function About() {
@@ -71,46 +51,15 @@ export default function About() {
           >
             <motion.div variants={fadeUp} className="inline-flex items-center gap-2 bg-primary-50 border border-primary-200 text-primary-600 text-sm font-medium px-4 py-2 rounded-full mb-6">
               <span className="w-2 h-2 bg-primary-500 rounded-full animate-pulse" />
-              About AttendPro
+              About AttendanceMitra
             </motion.div>
               <motion.h1 variants={fadeUp} className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-light leading-[1.1] mb-4">
-              We're on a Mission to Simplify{' '}
-              <span className="gradient-text">Attendance Management</span>
+              We are on a Mission to Simplify{' '}
+              <span className="gradient-text">Attendance</span>
             </motion.h1>
             <motion.p variants={fadeUp} className="text-lg sm:text-xl text-muted leading-relaxed max-w-2xl mx-auto">
-              Empowering modern teams with smart, AI-driven workforce management solutions trusted by 500+ companies worldwide.
+              Empowering modern teams with AI-driven workforce management, trusted by 500+ companies worldwide.
             </motion.p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Stats Strip */}
-      <section className="py-12 sm:py-16 bg-dark border-y border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={stagger}
-            className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
-          >
-            {stats.map((stat) => (
-              <motion.div
-                key={stat.label}
-                variants={fadeUp}
-                className="relative group"
-              >
-                <div className="glass-card rounded-2xl p-6 sm:p-8 text-center hover:shadow-2xl transition-shadow duration-500">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center mx-auto mb-4 shadow-lg shadow-primary-500/20 group-hover:scale-110 group-hover:shadow-xl group-hover:shadow-primary-500/30 transition-all duration-500">
-                    <stat.icon className="text-white text-xl" />
-                  </div>
-                  <p className="font-display text-3xl sm:text-4xl font-extrabold gradient-text">
-                    {stat.value}<span className="text-2xl">{stat.suffix}</span>
-                  </p>
-                  <p className="text-muted mt-1.5 font-medium">{stat.label}</p>
-                </div>
-              </motion.div>
-            ))}
           </motion.div>
         </div>
       </section>
@@ -132,17 +81,17 @@ export default function About() {
               </h2>
               <div className="space-y-4 text-muted leading-relaxed">
                 <p>
-                  AttendPro was founded in 2020 with a simple vision: make attendance management effortless for every organization.
-                  What started as a small solution for a handful of companies has grown into a platform trusted by over 500 businesses worldwide.
+                  AttendanceMitra was founded in 2020 with a clear mission: make attendance management effortless for every organization.
+                  What began as a small tool for a handful of companies has grown into a platform trusted by over 500 businesses worldwide.
                 </p>
                 <p>
-                  Our team of 50+ dedicated professionals works tirelessly to ensure our platform evolves with the needs of modern
-                  workplaces. From GPS tracking to AI-powered face recognition, we're committed to providing the most comprehensive
+                  Our team of 50+ dedicated professionals works tirelessly to ensure the platform evolves with the needs of modern
+                  workplaces. From GPS tracking to AI-powered face recognition, we are committed to delivering the most complete
                   attendance management solution on the market.
                 </p>
                 <p>
-                  Today, AttendPro processes over 1 million attendance records monthly, helping HR teams save thousands of hours
-                  and reduce payroll errors by 98%. We're proud to be the trusted choice for companies of all sizes.
+                  Today, AttendanceMitra processes over 1 million attendance records every month, helping HR teams save thousands of hours
+                  and reduce payroll errors by 98%. We are proud to be the trusted choice for companies of all sizes.
                 </p>
               </div>
             </motion.div>
@@ -221,49 +170,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* Leadership Team */}
-      <section className="py-20 sm:py-28 bg-gradient-to-b from-dark to-dark-deep/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-14"
-          >
-            <span className="text-sm font-semibold uppercase tracking-widest text-primary-500">Team</span>
-            <h2 className="section-heading mt-3 mb-4">
-              Meet Our{' '}
-              <span className="gradient-text">Leadership</span>
-            </h2>
-            <p className="section-subheading">
-              The people behind AttendPro, dedicated to transforming workforce management.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={stagger}
-            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
-          >
-            {team.map((member) => (
-              <motion.div
-                key={member.name}
-                variants={fadeUp}
-                whileHover={{ y: -5 }}
-                className="glass-card rounded-2xl p-6 sm:p-8 text-center group"
-              >
-                <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${member.gradient} flex items-center justify-center mx-auto mb-5 shadow-xl shadow-black/10 group-hover:scale-110 group-hover:shadow-2xl transition-all duration-500`}>
-                  <span className="text-white text-2xl font-bold">{member.initials}</span>
-                </div>
-                <h4 className="font-display font-bold text-dark text-lg">{member.name}</h4>
-                <p className="text-sm text-muted mt-1">{member.role}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
 
       {/* Final CTA */}
       <section className="relative py-20 sm:py-24 overflow-hidden">
@@ -281,10 +187,10 @@ export default function About() {
               <span className="text-accent-400">Journey</span>?
             </h2>
             <p className="text-white/70 text-lg max-w-xl mx-auto mb-8">
-              Join 500+ companies already using AttendPro. Start your free trial today.
+              Join 500+ companies already using AttendanceMitra. Start your free trial today.
             </p>
             <a
-              href="/#cta"
+              href="https://att.biosoftech.in/" target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-white text-primary-700 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-white/90 hover:shadow-2xl hover:shadow-white/20 transition-all duration-300 group"
             >
               Get Started Free
