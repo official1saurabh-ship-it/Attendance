@@ -28,29 +28,31 @@ export default function Navbar() {
       const el = document.querySelector(id);
       if (el) el.scrollIntoView({ behavior: 'smooth' });
     }
+    setIsOpen(false); // Close mobile menu on link click
   };
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-500 ${
-        scrolled
-          ? 'bg-dark/80 backdrop-blur-2xl shadow-lg shadow-black/20 border-b border-white/5'
-          : 'bg-dark/60 lg:bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-[100] isolate transition-all duration-500 ${scrolled
+        ? 'bg-dark/95 backdrop-blur-2xl shadow-lg shadow-black/30 border-b border-white/10'
+        : 'bg-dark/95 lg:bg-transparent'
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
+          {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-accent-500 rounded-xl flex items-center justify-center shadow-lg shadow-primary-500/20 group-hover:shadow-primary-500/40 transition-shadow duration-300">
+            <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-accent-500 rounded-xl flex items-center justify-center shadow-lg shadow-primary-500/30 group-hover:shadow-primary-500/50 transition-shadow">
               <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            <span className="font-display text-xl font-bold text-light">
+            <span className="font-display text-2xl font-bold text-light">
               Attendance<span className="text-primary-400">Mitra</span>
             </span>
           </Link>
 
+          {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <a
@@ -66,46 +68,50 @@ export default function Navbar() {
             <Link
               to="/#cta"
               onClick={() => handleClick('/#cta')}
-              className="bg-primary-500 text-white px-6 py-3 rounded-xl font-semibold text-sm hover:bg-primary-600 hover:shadow-xl hover:shadow-primary-500/25 transition-all duration-300"
+              className="bg-primary-500 hover:bg-primary-600 text-white px-6 py-3 rounded-2xl font-semibold text-sm shadow-lg shadow-primary-500/25 hover:shadow-xl transition-all duration-300"
             >
               Get Started
             </Link>
           </div>
 
-          <button
+          {/* Hamburger Button */}
+            <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2.5 rounded-xl bg-white/10 hover:bg-white/20 transition-colors duration-200 text-light border border-white/10"
+            className="lg:hidden relative flex items-center justify-center p-3 rounded-2xl bg-white/10 hover:bg-white/20 border border-white/30 active:bg-white/30 transition-all duration-200 text-white z-[101] touch-manipulation"
             aria-label="Toggle menu"
           >
-            {isOpen ? <HiX size={24} /> : <HiMenu size={24} />}
+            <span className={`inline-block transition-transform duration-300 ${isOpen ? 'rotate-90' : 'rotate-0'}`}>
+              {isOpen ? <HiX size={28} /> : <HiMenu size={28} />}
+            </span>
           </button>
         </div>
       </div>
 
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.25 }}
-            className="lg:hidden bg-dark/95 backdrop-blur-xl border-t border-white/5 overflow-hidden"
+            transition={{ duration: 0.3 }}
+            className="lg:hidden bg-dark/95 backdrop-blur-2xl border-t border-white/10"
           >
-            <div className="px-4 py-6 space-y-3">
+            <div className="px-6 py-8 space-y-2">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.href}
-                  href={isHome ? link.href.replace('/#', '#') : link.href}
+                  to={link.href}
                   onClick={() => handleClick(link.href)}
-                  className="block px-4 py-3 rounded-xl text-muted hover:text-light hover:bg-white/5 font-medium transition-all duration-200 text-sm"
+                  className="block px-5 py-4 rounded-2xl text-muted hover:text-light hover:bg-white/5 font-medium text-base transition-all"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
               <Link
                 to="/#cta"
-                onClick={() => { setIsOpen(false); handleClick('/#cta'); }}
-                className="block text-center bg-gradient-to-r from-primary-500 to-blue-600 text-white px-6 py-3 rounded-xl font-semibold text-sm hover:shadow-lg hover:shadow-primary-500/25 transition-all duration-200"
+                onClick={() => handleClick('/#cta')}
+                className="block mt-6 text-center bg-gradient-to-r from-primary-500 to-blue-600 text-white px-8 py-4 rounded-2xl font-semibold text-base shadow-xl shadow-primary-500/30"
               >
                 Get Started Free
               </Link>

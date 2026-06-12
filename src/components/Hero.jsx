@@ -28,11 +28,11 @@ export default function Hero() {
     <section className="relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-dark via-dark to-dark-deep pointer-events-none" />
 
-      <div className="absolute top-20 -left-32 w-[600px] h-[600px] bg-primary-500/10 rounded-full blur-3xl animate-blob" />
-      <div className="absolute top-40 -right-32 w-[500px] h-[500px] bg-accent-500/10 rounded-full blur-3xl animate-blob-delayed" />
+      <div className="absolute top-32 -left-32 w-[600px] h-[600px] bg-primary-500/10 rounded-full blur-3xl animate-blob" />
+      <div className="absolute top-48 -right-32 w-[500px] h-[500px] bg-accent-500/10 rounded-full blur-3xl animate-blob-delayed" />
       <div className="absolute -bottom-32 left-1/3 w-[700px] h-[700px] bg-primary-500/5 rounded-full blur-3xl" />
 
-      <div className="relative w-full px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+      <div className="relative w-full px-4 sm:px-6 lg:px-8 pt-24 pb-20 lg:pt-32 lg:pb-32">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           <div className="text-center lg:text-left">
             <motion.div
