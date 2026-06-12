@@ -47,7 +47,7 @@ export default function Navbar() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            <span className="font-display text-2xl font-bold text-light">
+            <span className="hidden lg:inline font-display text-2xl sm:text-xl font-bold text-light">
               Attendance<span className="text-primary-400">Mitra</span>
             </span>
           </Link>
@@ -75,14 +75,12 @@ export default function Navbar() {
           </div>
 
           {/* Hamburger Button */}
-            <button
+          <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden relative flex items-center justify-center p-3 rounded-2xl bg-white/10 hover:bg-white/20 border border-white/30 active:bg-white/30 transition-all duration-200 text-white z-[101] touch-manipulation"
+            className="lg:hidden flex items-center justify-center size-12 rounded-2xl bg-dark/90 border border-white/20 text-white active:scale-95 transition-transform duration-150"
             aria-label="Toggle menu"
           >
-            <span className={`inline-block transition-transform duration-300 ${isOpen ? 'rotate-90' : 'rotate-0'}`}>
-              {isOpen ? <HiX size={28} /> : <HiMenu size={28} />}
-            </span>
+            {isOpen ? <HiX size={24} /> : <HiMenu size={24} />}
           </button>
         </div>
       </div>
